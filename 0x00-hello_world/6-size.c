@@ -1,5 +1,9 @@
 #include<stdio.h>
-
+/**
+ * main - Prints The sizes of the variables
+ *
+ * Return: Always return 0
+ */
 int main(void)
 {
 	printf("Size of a char: %lu byte(s)\n", sizeof(char));
