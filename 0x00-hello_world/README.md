@@ -25,6 +25,9 @@
 2. ![**Task 1 - Compiler**]()
 3. ![**Task 2 - Assembler**]()
 4. ![**Task 3 - Name]()
+5. ![**Task 4 - Hello,puts]()
+6. ![**Task 5 - Hello,printf]()
+
 #### Task 0 - Preprocessor ####
 
 * Write a script that runs a C file through the preprocessor and save the result into another file.
@@ -164,5 +167,40 @@ julien@ubuntu:~/c/0x00$ ./3-name
 julien@ubuntu:~/c/0x00$ ls
 0-preprocessor  1-compiler   3-name  cisfun  main.o  Makefile
 100-intel       2-assembler  c       main.c  main.s
+julien@ubuntu:~/c/0x00$ 
+~~~
+
+
+#### Task 4 - Hello, puts ####
+
+* Write a C program that prints exactly \"Programming is like building a multilingual puzzle, followed by a new line.
+
+    Use the function puts
+    You are not allowed to use printf
+    Your program should end with the value 0
+
+julien@ubuntu:~/c/0x00$ gcc -Wall -Werror -Wextra -pedantic -std=gnu89 4-puts.c && ./a.out
+\"Programming is like building a multilingual puzzle
+~~~
+julien@ubuntu:~/c/0x00$ echo $?
+0
+julien@ubuntu:~/c/0x00$ 
+~~~
+
+
+#### Task 5 - Hello, printf ####
+
+* Write a C program that prints exactly with proper grammar, but the outcome is a piece of art,, followed by a new line.
+
+   - Use the function printf
+   - You are not allowed to use the function puts
+   - Your program should return 0
+   - Your program should compile without warning when using the -Wall gcc option
+~~~
+julien@ubuntu:~/c/0x00$ gcc -Wall -Werror -Wextra -pedantic -std=gnu89 5-printf.c
+julien@ubuntu:~/c/0x00$ ./a.out 
+with proper grammar, but the outcome is a piece of art,
+julien@ubuntu:~/c/0x00$ echo $?
+0
 julien@ubuntu:~/c/0x00$ 
 ~~~
