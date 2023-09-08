@@ -25,19 +25,19 @@ int main(void)
 					{
 						continue;
 					}
-					putchar(h + '0');
-					putchar(i + '0');
-					putchar(' ');
-					putchar(j + '0');
-					putchar(m + '0');
+					/*putchar(h + '0');*/
+					/*putchar(i + '0');*/
+					/*putchar(' ');*/
+					/*putchar(j + '0');*/
+					/*putchar(m + '0');*/
 					if (h == 9 && i == 9 && j == 9 && m == 9)
 					{
 						continue;
 					}
 					else
 					{
-						putchar(',');
-						putchar(' ');
+						/*putchar(',');*/
+							/*putchar(' ');*/
 					}
 				}
 			}
