@@ -22,10 +22,11 @@
 #### **Table of Contents** ####
 1. ![**Task 0 - Positive anything is better than negative nothing**]()
 2. ![**Task 1- The last digit**]()
-3. ![]()
-4. ![]()
+3. ![Task 2 - ]()
+4. ![Task 3 - ]()
 5. ![Task 4 - Numbers]()
-
+6. ![Task 5 - Numberz]()
+7. ![Task 6 ]
 #### Task 0 - Positive anything is better than negative nothing ####
 
 * This program will assign a random number to the variable n each time it is executed. Complete the source code in order to print whether the number stored in the variable n is positive or negative.
@@ -148,7 +149,7 @@ julien@ubuntu:~/0x01$ ./4-print_alphabt | grep [eq]
 julien@ubuntu:~/0x01$
 ~~~
 
-#### 5. Numbers ####
+#### Task 5 - Numbers ####
 
 * Write a program that prints all single digit numbers of base 10 starting from 0, followed by a new line.
 
@@ -174,4 +175,18 @@ julien@ubuntu:~/0x01$ gcc -Wall -pedantic -Werror -Wextra -std=gnu89 6-print_num
 julien@ubuntu:~/0x01$ ./6-print_numberz 
 0123456789
 julien@ubuntu:~/0x01$ 
+~~~
+
+#### Task 7 - Smile in the mirror ####
+
+* Write a program that prints the lowercase alphabet in reverse, followed by a new line.
+
+   * You can only use the putchar function (every other function (printf, puts, etc…) is forbidden)
+   *  All your code should be in the main function
+   *  You can only use putchar twice in your code
+~~~
+julien@ubuntu:~/0x01$ gcc -Wall -pedantic -Werror -Wextra -std=gnu89 7-print_tebahpla.c -o 7-print_tebahpla
+julien@ubuntu:~/0x01$ ./7-print_tebahpla
+zyxwvutsrqponmlkjihgfedcba
+julien@ubuntu:~/0x01$
 ~~~
