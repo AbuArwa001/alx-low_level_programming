@@ -3,13 +3,9 @@
 #include <stdio.h>
 
 /**
-*
 * main - prints random numbers and checks if its negative or positive
-* @n: random integer
 *
-*
-*
-* Return : Always returns 0
+* Return: Always returns 0
 */
 int main(void)
 {
@@ -20,10 +16,10 @@ int main(void)
 	if (n == 0)
 	{
 		printf("%d is zero\n", n);
-	}else if(n < 0)
+	} else if (n < 0)
 	{
 		printf("%d is negative\n", n);
-	}else
+	} else
 	{
 		printf("%d is positive\n", n);
 	}
