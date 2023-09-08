@@ -11,7 +11,8 @@
 int main(void)
 {
 	int i, j, m, h;
-	for(h = 0; h <= 9; h++)
+
+	for (h = 0; h <= 9; h++)
 	{
 		for (i = 0; i <= 9; i++)
 		{
@@ -29,7 +30,7 @@ int main(void)
 					putchar(' ');
 					putchar(j + '0');
 					putchar(m + '0');
-					if ( h == 9 && i == 9 && j == 9 && m == 9)
+					if (h == 9 && i == 9 && j == 9 && m == 9)
 					{
 						continue;
 					}
