@@ -1,49 +1,34 @@
 #include <stdio.h>
-/**
-* main - prints all possible different combinations of three digits
-*
-*
-*
-* Return: Always returns 0
-*
-*/
 
+/**
+ * main - Prints all possible combinations of two two-digit numbers,
+ *        ranging from 0-99, separated by a comma followed by a space.
+ *
+ * Return: Always 0.
+ */
 int main(void)
 {
-	int i, j, m, h;
+	int n, m;
 
-	for (h = 0; h <= 9; h++)
+	for (n = 0; n <= 98; n++)
 	{
-		for (i = 0; i <= 9; i++)
+		for (m = n + 1; m <= 99; m++)
 		{
+			putchar((n / 10) + '0');
+			putchar((n % 10) + '0');
+			putchar(' ');
+			putchar((m / 10) + '0');
+			putchar((m % 10) + '0');
 
-			for (j = 0; j <= 9; j++)
-			{
-				for (m = 0; m <= 9; m++)
-				{
-					if ((h + '0') == 0 || (j + '0') == 0 || (m + '0') == 0)
-					{
-						continue;
-					}
-					/*putchar(h + '0');*/
-					/*putchar(i + '0');*/
-					/*putchar(' ');*/
-					/*putchar(j + '0');*/
-					/*putchar(m + '0');*/
-					if (h == 9 && i == 9 && j == 9 && m == 9)
-					{
-						continue;
-					}
-					else
-					{
-						/*putchar(',');*/
-							/*putchar(' ');*/
-					}
-				}
-			}
+			if (n == 98 && m == 99)
+				continue;
+
+			putchar(',');
+			putchar(' ');
 		}
-
 	}
+
 	putchar('\n');
+
 	return (0);
 }
