@@ -9,11 +9,11 @@
 int main(void)
 {	unsigned long int sum = 2, p = 1, cur = 2, nxt = 0, tmp = 0;
 
-	while (nxt <= 4000000)
+	while (sum <= 4000000)
 	{	nxt = p + cur;
-		if ( nxt % 2 == 0)
+		if ((nxt % 2) != 0)
 		{
-			sum += sum;
+			sum += nxt;
 
 		}
 		tmp = cur;
