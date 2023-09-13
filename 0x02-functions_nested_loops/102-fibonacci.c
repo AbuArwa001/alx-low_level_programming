@@ -7,7 +7,7 @@
  *
  **/
 int main(void)
-{	unsigned long int seq = 50, p = 1, cur = 2, nxt = 0, tmp = 0;
+{	unsigned long int seq = 48, p = 1, cur = 2, nxt = 0, tmp = 0;
 
 	printf("%ld, ", p);
 	printf("%ld, ", cur);
