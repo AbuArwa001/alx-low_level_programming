@@ -12,22 +12,26 @@ int main(void)
 	for (; i <= 100; i++)
 	{
 
+		if (i != 1 || i == 100)
+		{	printf(" ");
+		}
+
 		if (i % 15 == 0)
-		{	printf("%s ", "FizzBuzz");
+		{	printf("%s", "FizzBuzz");
 			continue;
 		}
 
 		else if (i % 5 == 0)
-		{	printf("%s ", "Buzz");
+		{	printf("%s", "Buzz");
 			continue;
 		}
 
 		else if (i % 3 == 0)
-		{	printf("%s ", "Fizz");
+		{	printf("%s", "Fizz");
 			continue;
 		}
 
-		printf("%d ", i);
+		printf("%d", i);
 	}
 
 	printf("\n");
