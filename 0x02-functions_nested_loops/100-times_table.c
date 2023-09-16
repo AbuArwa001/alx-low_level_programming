@@ -30,6 +30,13 @@ void print_times_row(int row, int n)
 	int j = 0;
 	for (j = 0; j <= n; j++) {
 		print_times_cell(row * j);
+		if (row == 0 && j != n) {
+			_putchar(',');
+			_putchar(' ');
+			_putchar(' ');
+			_putchar(' ');
+			continue;
+		}
 		if (j != n) {
 			_putchar(',');
 			_putchar(' ');
@@ -45,8 +52,11 @@ void print_times_row(int row, int n)
 void print_times_cell(int cell)
 {
 	if (cell <= 9) {
+		if (cell != 0)
+		{
 		_putchar(' ');
 		_putchar(' ');
+		}
 		_putchar(cell + '0');
 	} else if (cell <= 99) {
 		_putchar(' ');
