@@ -16,10 +16,6 @@ char *_strcpy(char *dest, char *src)
 	char *tmp = malloc(sizeof(char) * len);
 
 
-	if (_strlen(src) == 0)
-	{
-		exit(98);
-	}
 	while (*(src + i) != '\0')
 	{
 		tmp[i] = *(src + i);
