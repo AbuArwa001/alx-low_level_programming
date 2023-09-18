@@ -16,7 +16,7 @@ void puts_half(char *str)
 			_putchar(*(str + start));
 			start++;
 		}
-		_putchar('\n');
+_putchar('\n');
 	}
 	else
 	{
@@ -27,6 +27,6 @@ void puts_half(char *str)
 			_putchar(*(str + start));
 			start++;
 		}
-		_putchar('\n');
+	/*/	_putchar('\n');*/
 	}
 }
