@@ -51,7 +51,7 @@ int main(void)
 {
 
 	int passwordLength = 12;
-	char password[passwordLength + 1];
+	char password[13];
 
 	srand(time(NULL));
 	generateRandomPassword(password, passwordLength);
