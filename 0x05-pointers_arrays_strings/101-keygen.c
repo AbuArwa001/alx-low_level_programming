@@ -28,6 +28,7 @@ char getRandomDigit(void)
 void generateRandomPassword(char *password, int length)
 {
 	int i = 0;
+
 	for (i = 0; i < length; i++)
 	{
 		if (i % 2 == 0)
@@ -48,10 +49,11 @@ void generateRandomPassword(char *password, int length)
  */
 int main(void)
 {
-	srand(time(NULL));
+
 	int passwordLength = 12;
 	char password[passwordLength + 1];
 
+	srand(time(NULL));
 	generateRandomPassword(password, passwordLength);
 	printf("%s", password);
 
