@@ -27,7 +27,8 @@ char getRandomDigit(void)
 
 void generateRandomPassword(char *password, int length)
 {
-	for (int i = 0; i < length; i++)
+	int i = 0;
+	for (i = 0; i < length; i++)
 	{
 		if (i % 2 == 0)
 		{
