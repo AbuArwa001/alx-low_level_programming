@@ -25,11 +25,8 @@ char *rot13(char *str)
 				str[i] = rotMap[(unsigned char)str[i]];
 				break;
 			}
-			else
-			{
-				str[i] = lowRot[(unsigned char)str[i]];
-				break;
-			}
+			str[i] = lowRot[(unsigned char)str[i]];
+			break;
 		}
 
 		i++;
