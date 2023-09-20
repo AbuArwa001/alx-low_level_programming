@@ -1,37 +1,33 @@
 #include "main.h"
-#include <stdio.h>
-/**
- * cap_string - Capitalize beggining of a string
- * @str: string to be capitalized
- * Return: returns a capitalize string
- */
 
+/**
+ * cap_string - Capitalize the first letter of each word in a string
+ * @str: The input string
+ * Return: A pointer to the modified string
+ */
 char *cap_string(char *str)
 {
-	int i = 0, j = 0;
-	char *special = ",.;!?(){}\"\t\n ";
+    int i = 0;
 
-	while (str[i] != '\0')
-	{
-		j = 0;
 
-		while (special[j] != '\0')
-		{
-			if (special[j] == str[i])
-			{
-				if (str[i + 1] >= 'a' && str[i + 1] <= 'z')
-				{
-					/*printf("character is %c\n", str[i+1]);*/
-					str[i + 1] = str[i + 1] - 32;
-					/*str[i+1] = str[i + 1] - 32;*/
-				}
-			}
+    if (str[0] >= 'a' && str[0] <= 'z')
+        str[0] -= 32;
+    while (str[i] != '\0')
+    {
 
-			j++;
-		}
+        if (str[i] == ' ' || str[i] == '\t' || str[i] == '\n' ||
+            str[i] == ',' || str[i] == ';' || str[i] == '.' ||
+            str[i] == '!' || str[i] == '?' || str[i] == '\"' ||
+            str[i] == '(' || str[i] == ')' || str[i] == '{' ||
+            str[i] == '}')
+        {
 
-		i++;
-	}
+            if (str[i + 1] >= 'a' && str[i + 1] <= 'z')
+                str[i + 1] -= 32;
+        }
 
-	return (str);
+        i++;
+    }
+
+    return (str);
 }
