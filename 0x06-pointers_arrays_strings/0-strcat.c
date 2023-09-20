@@ -11,9 +11,19 @@
 
 char *_strcat(char *dest, char *src)
 {
-	int i = _strlen(dest);
-	int new_length = i + _strlen(src);
+	int i = 0;
+	int new_length = 0;
 
+	if (src == NULL)
+	{
+		return (dest);
+	}
+	else if (dest == NULL)
+	{
+		return (src);
+	}
+	i =  _strlen(dest);
+	new_length = i + _strlen(src);
 	while (*src != '\0')
 	{
 		*(dest + i) = *src;
