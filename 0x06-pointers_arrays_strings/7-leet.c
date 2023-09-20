@@ -10,24 +10,14 @@ char *leet(char *str)
 	int i = 0;
 
 	while (str[i] != '\0')
-	{
-		if (str[i] == 'A' || str[i] == 'a')
-			str[i] = '4';
-
-		if (str[i] == 'E' || str[i] == 'e')
-			str[i] = '3';
-
-		if (str[i] == 'O' || str[i] == 'o')
-			str[i] = '0';
-
-		if (str[i] == 'T' || str[i] == 't')
-			str[i] = '7';
-
-		if (str[i] == 'L' || str[i] == 'l')
-			str[i] = '1';
-
-		i++;
-	}
+{str[i] = (str[i] == 'A' || str[i] == 'a') ? '4' :
+(str[i] == 'E' || str[i] == 'e') ? '3' :
+(str[i] == 'O' || str[i] == 'o') ? '0' :
+(str[i] == 'L' || str[i] == 'l') ? '1' :
+(str[i] == 'T' || str[i] == 't') ? '7' :
+str[i];
+i++;
+}
 
 	return (str);
 }
