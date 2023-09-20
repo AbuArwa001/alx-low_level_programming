@@ -7,43 +7,19 @@
  */
 char *leet(char *str)
 {
-	int i = 0, k;
-	char *cipher = "AaEeOoTtLl";
+int i = 0;
+char leetMap[256] = {0};
 
-	while (str[i] != '\0')
-	{
-		for (k = 0; k < _strlen(cipher); k++)
-		{
-			while (cipher[k] == str[i])
-			{
-				while ((k / 2) == 0)
-				{
-					str[i] = '4';
-					break;
-				}
-				while ((k / 2) == 1)
-				{
-					str[i] = '3';
-					break;
-				}
-				while ((k / 2) == 2)
-				{
-					str[i] = '0';
-					break;
-				}
-				while ((k / 2) == 3)
-				{
-					str[i] = '7';
-					break;
-				}
-				while ((k / 2) == 4)
-				{
-					str[i] = '1';
-					break;
-				}
-			}
-		}
-		i++;
-	}
+    leetMap['a'] = leetMap['A'] = '4';
+    leetMap['e'] = leetMap['E'] = '3';
+    leetMap['o'] = leetMap['O'] = '0';
+    leetMap['t'] = leetMap['T'] = '7';
+    leetMap['l'] = leetMap['L'] = '1';
+    while (str[i]) {
+        if (leetMap[(unsigned char)str[i]]) {
+            str[i] = leetMap[(unsigned char)str[i]];
+        }
+        i++;
+    }
 	return (str);
 }
