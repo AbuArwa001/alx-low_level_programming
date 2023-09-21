@@ -6,12 +6,15 @@
  */
 void print_number(int n)
 {
-	if (n > INT_MAX || n < INT_MIN )
+	if (n > INT_MAX || n < INT_MIN)
 	{
-	 	return;
+		_putchar('0');
+		return;
 	}
+
 	if (n < 0)
-	{	_putchar('-');
+	{
+		_putchar('-');
 		n = -n;
 	}
 
