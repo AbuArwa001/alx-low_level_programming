@@ -33,19 +33,14 @@ void print_buffer(char *b, int size)
 		printf(" ");
 		for (l = 0; l < 10  && k < size; l++)
 		{
-			if (b[k] == '\0')
-			{
+			if ((b[k] >= 0 && b[k] <= 31))
 				printf(".");
-			}
 			else
-			{
-				if (b[k] == '\n' || (b[k] > 0 && b[k] < 8))
-					printf(".");
-				else
-					printf("%c", b[k]);
-			}
+				printf("%c", b[k]);
 			k++;
 		}
 		printf("\n");
 	}
+	if (size <= 0)
+		printf("\n");
 }
