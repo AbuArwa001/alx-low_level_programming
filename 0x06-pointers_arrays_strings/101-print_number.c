@@ -1,12 +1,15 @@
 #include "main.h"
-
+#include <limits.h>
 /**
  * print_number - prints integers using _putchar
  * @n: is the number to be printed
  */
 void print_number(int n)
 {
-
+	if (n > INT_MAX || n < INT_MIN )
+	{
+	 	return;
+	}
 	if (n < 0)
 	{	_putchar('-');
 		n = -n;
