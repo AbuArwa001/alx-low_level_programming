@@ -29,7 +29,7 @@ You don’t have to push _putchar.c, we will use our file. If you do - it won’
 - Don’t forget to push your header file
 
 ### **Table of contents**
-1. [**Task 0 - strcat**](/README.md#task-0---strcat)
+1. [**Task 0 - strcat**](/0x06-pointers_arrays_strings#task-0---strcat)
 2.
 3.
 
