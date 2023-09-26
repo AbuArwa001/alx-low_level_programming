@@ -1,50 +1,28 @@
 #include "main.h"
 #include <stdio.h>
+
 /**
- * print_diagsums - prints sum of diagnal
- * @a: 2 dimensional array
- * @size: size of the array
- * Return: returns sum of daignals;
+ * print_diagsums - prints sum of diagonals of a square matrix
+ * @a: 2-dimensional square array
+ * @size: size of the array (number of rows/columns)
  */
-
-
 void print_diagsums(int *a, int size)
 {
+    int row, col;
+    int sum_diag1 = 0;
+    int sum_diag2 = 0;
 
-	int i = 0, sum = 0, sum1 = 0;
+    for (row = 0; row < size; row++)
+    {
+        for (col = 0; col < size; col++)
+        {
+            if (row == col)
+                sum_diag1 += a[row * size + col];
 
+            if (row == size - col - 1)
+                sum_diag2 += a[row * size + col];
+        }
+    }
 
-	for (; i < size * size ; i++)
-	{
-		if (size > 3 && i % 6 == 0)
-		{
-			sum += *(a + i);
-
-		}
-		else
-			if (size <= 3 && i % 4 == 0)
-			{
-				sum += *(a + i);
-				if (i  != (size * size) - 1)
-				{
-					sum1 += *(a + i);
-				}
-			}
-			else
-				if (size <= 3 && i % 2 == 0)
-				{
-					sum1 += *(a + i);
-				}
-				else
-					if (size > 3 && i % 4 == 0)
-					{
-						sum1 += *(a + i);
-					}
-
-		if (i == 12)
-		{
-			sum1 += *(a + i);
-		}
-	}
-	printf("%d , %d\n", sum, sum1);
+    printf("%d, %d\n", sum_diag1, sum_diag2);
 }
