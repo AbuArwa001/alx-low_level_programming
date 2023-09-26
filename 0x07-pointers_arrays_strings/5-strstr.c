@@ -1,49 +1,32 @@
 #include "main.h"
-#include <stdlib.h>
 #include <stdio.h>
 
 /**
- * _strstr - Finds the first occurrence of the substrin needle in the
- *           str haystack
- * @haystack: strin to be scanned
- * @needle: string to be seacrhed
- * Return: returns the remaining from the needle found
- *         returns null if not found
+ * _strstr - Finds the first occurrence of the substring
+ *           needle in the string haystack
+ * @haystack: String to be searched
+ * @needle: Substring to search for
+ * Return: Pointer to the first occurrence
+ *         of needle in haystack, or NULL if not found
  */
 char *_strstr(char *haystack, char *needle)
 {
-	int i = 0, j = 0, k = 0;
+	int i, j;
 
 	if (needle == NULL)
+		return (NULL);
+
+	for (i = 0; haystack[i] != '\0'; i++)
 	{
-		return ("NULL");
-	}
-
-	while (haystack[i] != '\0')
-	{
-
-		k = i;
-		j = 0;
-
-		while (haystack[k] == needle[j] && needle[j] != '\0')
+		for (j = 0; needle[j] != '\0' && haystack[i + j] == needle[j]; j++)
 		{
-			k += 1;
-			j++;
 		}
 
-		if ((needle[j] != '\0' && j != 0) && (haystack[i + 1] == '\0'))
+		if (needle[j] == '\0')
 		{
-			return ("NULL");
+			return (haystack + i);
 		}
-		else
-			if (j != 0 && needle[j] == '\0')
-			{
-				return (haystack + i);
-			}
-
-		i++;
-
 	}
 
-	return (haystack);
+	return (NULL);
 }
