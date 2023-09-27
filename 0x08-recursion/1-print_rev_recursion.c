@@ -1,5 +1,4 @@
 #include "main.h"
-#include "2-strlen.c"
 /**
  * _print_rev_recursion - Prints string in reverse
  * @s: string to be reversed
