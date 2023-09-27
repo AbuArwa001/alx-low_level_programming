@@ -29,7 +29,7 @@ int isDivisible(int n, int divisor)
 
 int is_prime_number(int n)
 {
-	if (n <= 0)
+	if (n <= 1)
 	{
 		return (0);
 	}
