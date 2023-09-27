@@ -5,20 +5,31 @@
  * @num: decremental number used to search for square root
  * Return: returns the square root or -1 if s non-nautural number
  */
-int repeat(int sqt, int num)
+long int repeat(long int sqt, long int num)
 {
+	long int square = num * num;
+
 	if (num <= 0)
 	{
 		return (-1);
 	}
 
-	if (sqt == (num * num))
+	if (square == sqt)
 	{
 		return (num);
 	}
 
-	return (repeat(sqt, num - 1));
+	if (square > sqt && sqt >= 1000)
+	{
+		return (repeat(sqt, num / 2));
+	}
+	else
+		if (square > sqt && sqt < 1000)
+		{
+			return (repeat(sqt, num - 1));
+		}
 
+	return (-1);
 }
 /**
  * _sqrt_recursion - it calculates the square root of a number
