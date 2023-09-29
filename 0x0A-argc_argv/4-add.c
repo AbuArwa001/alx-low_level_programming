@@ -80,7 +80,6 @@ int main(int argc, char **argv)
 	}
 	else
 	{
-		printf("try\n");
 		printf("%d\n", 0);
 	}
 
