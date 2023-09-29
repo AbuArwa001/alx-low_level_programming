@@ -10,7 +10,7 @@ int main(int argc, char **argv)
 {
 	int mult = 0;
 
-	if (argc > 1)
+	if (argc == 3)
 	{
 		mult =  atoi(argv[1]) * atoi(argv[2]);
 
