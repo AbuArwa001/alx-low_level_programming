@@ -1,5 +1,53 @@
 #include "main.h"
+/**
+ * check - checks if character is an int
+ * @c: charcter to be checked
+ * Return: returns 1 if int
+ *         0 if not
+ */
+int check(char c)
+{
+	int i = '0';
 
+	for (; i <= '9' ; i++)
+	{
+		if (c == i)
+		{
+			return (1);
+		}
+	}
+
+	return (0);
+}
+/**
+ * digits_only - checks if a string has digits only
+ * @s: string to be checked
+ * Return: returns 0 if  false
+ *         1 if true
+ */
+int digits_only(char *s)
+{
+	int i = 0;
+
+	while (s[i] != '\0' && s[i] != '\n')
+	{
+		if ((s[i]) == '-' && (check(s[i + 1])) == 1)
+		{
+			i++;
+			continue;
+		}
+
+		if (check(s[i]) == 0)
+		{
+			printf("jarib\n");
+			return (0);
+		}
+
+		i++;
+	}
+
+	return (1);
+}
 /**
  * main - prints sum of  arguments
  * @argc: arguments count
@@ -20,7 +68,7 @@ int main(int argc, char **argv)
 				continue;
 			}
 
-			if (!atoi(argv[i]))
+			if (digits_only(argv[i]) == 0)
 			{
 				printf("Error\n");
 				return (1);
