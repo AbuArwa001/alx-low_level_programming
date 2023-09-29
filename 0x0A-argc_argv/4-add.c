@@ -1,7 +1,5 @@
 #include "main.h"
 
-#include "main.h"
-
 /**
  * main - prints sum of  arguments
  * @argc: arguments count
@@ -16,6 +14,12 @@ int main(int argc, char **argv)
 	{
 		for (; i < argc ; i++)
 		{
+			if (atoi(argv[i]) == 0)
+			{
+				sum += atoi(argv[i]);
+				continue;
+			}
+
 			if (!atoi(argv[i]))
 			{
 				printf("Error\n");
