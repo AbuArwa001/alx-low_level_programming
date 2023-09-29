@@ -39,7 +39,6 @@ int digits_only(char *s)
 
 		if (check(s[i]) == 0)
 		{
-			printf("jarib\n");
 			return (0);
 		}
 
@@ -62,7 +61,7 @@ int main(int argc, char **argv)
 	{
 		for (; i < argc ; i++)
 		{
-			if (atoi(argv[i]) == 0)
+			if (argv[i][0] == '0' && argv[i][1] == '\0')
 			{
 				sum += atoi(argv[i]);
 				continue;
@@ -81,6 +80,7 @@ int main(int argc, char **argv)
 	}
 	else
 	{
+		printf("try\n");
 		printf("%d\n", 0);
 	}
 
