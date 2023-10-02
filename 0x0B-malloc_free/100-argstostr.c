@@ -11,7 +11,7 @@
 char *str_conc(char *s1, char *s2)
 {
 	char *str = NULL;
-	int len = 0, i = 0, j = 0;
+	int len = 0, i = 0;
 
 	if (s2 == NULL && s1 == NULL)
 	{
