@@ -83,7 +83,6 @@ char **strtow(char *str)
 	if (wd == 1)
 		return (NULL);
 	newStr = malloc(sizeof(char *) * wd);
-
 	if (newStr == NULL)
 		return (NULL);
 	while (*(str + i) != '\0')
@@ -99,8 +98,9 @@ char **strtow(char *str)
 		}
 		while (str[i] != ' ' && str[i] != '\0')
 		{
-			newStr[k][j] = str[i++];
+			newStr[k][j] = str[i];
 			j++;
+			i++;
 			flag = 1;
 		}
 		if (flag == 1)
