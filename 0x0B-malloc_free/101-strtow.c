@@ -94,7 +94,8 @@ char **strtow(char *str)
 		if (len > 0)
 		{
 			newStr[k] = malloc(sizeof(char) * len);
-			dealloc(newStr, k) == 1 ? NULL : 0;
+			if (dealloc(newStr, k) == 1)
+				return (NULL);
 		}
 		while (str[i] != ' ' && str[i] != '\0')
 		{
