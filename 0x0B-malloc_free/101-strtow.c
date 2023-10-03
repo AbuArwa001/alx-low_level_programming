@@ -30,18 +30,17 @@ int find_2d_length(char *st)
 	{
 		flag = 0;
 
-		while (st[i] != ' ')
+		while (st[i] != ' ' && st[i] != '\0')
 		{
 			flag = 1;
 			i++;
 		}
-
-		i++;
-
 		if (flag == 1)
 		{
 			length += 1;
 		}
+		else
+			i++;
 	}
 
 	return (length);
@@ -54,19 +53,19 @@ int find_2d_length(char *st)
 char **strtow(char *str)
 {
 	char **newStr = NULL;
-	int  i = 0, j = 0, k = 0, words = 0, flag = 0, len = 0;
+	int  i = 0, j = 0, k = 0, wd = 0, flag = 0, len = 0;
 
 	if (*str == '\0' || str == NULL)
 		return (NULL);
-	words = find_2d_length(str);
-	newStr = malloc(sizeof(char *) * words);
+	wd = find_2d_length(str) + 1;
+	newStr = malloc(sizeof(char *) * wd);
 	if (newStr == NULL)
 		return (NULL);
 	while (*(str + i) != '\0')
 	{
 		flag = 0;
 		j = 0;
-		len = size_of_str(str + i);
+		len = size_of_str(str + i) + 1;
 		if (len > 0)
 		{
 			newStr[k] = malloc(sizeof(char) * len);
@@ -78,19 +77,19 @@ char **strtow(char *str)
 				return (NULL);
 			}
 		}
-		while (str[i] != ' ')
+		while (str[i] != ' ' && str[i] != '\0')
 		{
-			newStr[k][j] = str[i++];
+			newStr[k][j++] = str[i++];
 			flag = 1;
-			j++;
 		}
-		i++;
 		if (flag == 1)
 		{
 			newStr[k][j] = '\0';
 			k++;
 		}
+		else
+			i++;
 	}
-	newStr[words] = NULL;
+	newStr[wd - 1] = NULL;
 	return (newStr);
 }
