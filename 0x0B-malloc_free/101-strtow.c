@@ -99,7 +99,8 @@ char **strtow(char *str)
 		}
 		while (str[i] != ' ' && str[i] != '\0')
 		{
-			newStr[k][j++] = str[i++];
+			newStr[k][j] = str[i++];
+			j++;
 			flag = 1;
 		}
 		if (flag == 1)
@@ -110,7 +111,6 @@ char **strtow(char *str)
 		else
 			i++;
 	}
-
 	newStr[wd - 1] = NULL;
 	return (newStr);
 }
