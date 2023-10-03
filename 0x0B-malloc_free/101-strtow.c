@@ -89,7 +89,7 @@ char **strtow(char *str)
 	{
 		flag = 0;
 		j = 0;
-		len = size_of_str(str + i) + 1;
+		len = size_of_str(str + i);
 		if (len > 0)
 		{
 			newStr[k] = malloc(sizeof(char) * len);
