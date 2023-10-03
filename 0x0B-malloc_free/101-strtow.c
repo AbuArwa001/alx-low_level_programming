@@ -1,6 +1,26 @@
 #include "main.h"
 #include <stdio.h>
 /**
+ * dealloc - deallocates previousey allocated memory
+ *           if the current array is null
+ * @newStr: array to be checked
+ * @k: current arry number
+ * Return: retirns 1 deleted and 0 if not deleted
+ */
+int dealloc(char **newStr, int k)
+{
+	int i = 0;
+
+	if (newStr[k] == NULL)
+	{
+		for (i = 0; i < k; i++)
+			free(newStr[k]);
+		free(newStr);
+		return (1);
+	}
+	return (0);
+}
+/**
  * size_of_str - claculates the size of a sring
  * @st: the string to be calculated
  * Return: returns the length of the string
@@ -35,6 +55,7 @@ int find_2d_length(char *st)
 			flag = 1;
 			i++;
 		}
+
 		if (flag == 1)
 		{
 			length += 1;
@@ -57,8 +78,12 @@ char **strtow(char *str)
 
 	if (*str == '\0' || str == NULL)
 		return (NULL);
+
 	wd = find_2d_length(str) + 1;
+	if (wd == 1)
+		return (NULL);
 	newStr = malloc(sizeof(char *) * wd);
+
 	if (newStr == NULL)
 		return (NULL);
 	while (*(str + i) != '\0')
@@ -69,13 +94,7 @@ char **strtow(char *str)
 		if (len > 0)
 		{
 			newStr[k] = malloc(sizeof(char) * len);
-			if (newStr == NULL)
-			{
-				for (i = 0; i < k; i++)
-					free(newStr[k]);
-				free(newStr);
-				return (NULL);
-			}
+			dealloc(newStr, k) == 1 ? NULL : 0;
 		}
 		while (str[i] != ' ' && str[i] != '\0')
 		{
@@ -90,6 +109,7 @@ char **strtow(char *str)
 		else
 			i++;
 	}
+
 	newStr[wd - 1] = NULL;
 	return (newStr);
 }
