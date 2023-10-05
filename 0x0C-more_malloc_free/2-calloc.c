@@ -32,7 +32,7 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 			break;
 
 		i++;
-	};
+	}
 
 	return (ptr);
 }
