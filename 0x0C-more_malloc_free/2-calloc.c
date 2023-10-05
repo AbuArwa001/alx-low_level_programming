@@ -1,4 +1,5 @@
 #include "main.h"
+#include "0-memset.c"
 /**
  * _calloc - Allocates memof an array nmemb elements
  *           of size bytes each
@@ -9,8 +10,6 @@
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
 	void *ptr = NULL;
-	unsigned int i = 0;
-	char *pChar = NULL;
 
 	if (nmemb == 0 || size == 0)
 	{
@@ -22,17 +21,6 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 	if (ptr == NULL)
 		return (NULL);
 
-	pChar = (char *)ptr;
-
-	while (ptr)
-	{
-		if (i < nmemb)
-			*pChar++ = 0;
-		else
-			break;
-
-		i++;
-	}
-
+	_memset(ptr, 0, nmemb * size);
 	return (ptr);
 }
