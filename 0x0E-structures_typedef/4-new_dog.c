@@ -17,7 +17,10 @@ dog_t *new_dog(char *name, float age, char *owner)
 		return (NULL);
 	}
 
-	init_dog(d, name, age, owner);
+	/*init_dog(d, name, age, owner);*/
 
+	d->name = name;
+	d->age = age;
+	d->owner = owner;
 	return (d);
 }
