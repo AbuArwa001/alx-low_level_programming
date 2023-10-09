@@ -1,0 +1,23 @@
+#include <stdio.h>
+  2 
+  3 /**                                                                         
+  4  * main - prints alphabets a to z                                           
+  5  *                                                                          
+  6  *                                                                          
+  7  * Return: Always return 0                                                  
+  8  *                                                                          
+  9  *                                                                          
+ 10  */
+ 11 
+ 12 int main(void)
+ 13 {
+ 14         char c = 'a';
+ 15 
+ 16         for (; c <= 'z'; c++)
+ 17         {
+ 18                 putchar(c);
+ 19         }
+ 20         putchar('\n');
+ 21         return (0);
+ 22 }
+    

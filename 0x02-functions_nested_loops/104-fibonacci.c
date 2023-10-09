@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdint.h>
 /**
  * main - prints fibonanci sequence
  *
@@ -7,19 +8,19 @@
  *
  **/
 int main(void)
-{	unsigned long int seq = 98, p = 1, cur = 2, nxt = 0, tmp = 0;
-
-	printf("%ld, ", p);
-	printf("%ld, ", cur);
-	while (seq >= 1)
+{	int64_t seq = 1, p = 1, cur = 2, nxt = 0, tmp = 0;
+int set = 4;
+	printf("%ld, \n", p);
+	printf("%ld, \n", cur);
+	while (set <= 98)
 	{	nxt = p + cur;
-		if (seq != 1)
-		{	printf("%ld, ", nxt);
-		}
+		printf("%d: ",set);
+		printf("%ld, \n", nxt);
 		tmp = cur;
 		cur = nxt;
 		p = tmp;
-		seq--;
+		seq++;
+		set++;
 	}
 	return (0);
 }

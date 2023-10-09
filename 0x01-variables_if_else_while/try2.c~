@@ -1,0 +1,29 @@
+#include <stdio.h>
+
+int main() {
+    int i, j;
+
+    for (i = 0; i <= 99; i++) {
+        for (j = 1; j <= 99; j++) {
+            putchar('0' + i / 10);
+            putchar('0' + i % 10);
+            putchar(' ');
+            putchar('0' + j / 10);
+            putchar('0' + j % 10);
+            if (!(i == 99 && j == 99)) {
+                putchar(',');
+                putchar(' ');
+            }
+            if (i == 40 && j == 91) {
+                j = 41;
+            }
+            if (i == 93 && j == 99) {
+                i = 99;
+                j = 99;
+            }
+        }
+    }
+    putchar('\n');
+
+    return 0;
+}
