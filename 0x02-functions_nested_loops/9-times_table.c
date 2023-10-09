@@ -5,9 +5,9 @@
 * @i: column of the table
 * @j: row of the table
 */
-void procces(int p, int i, int j, int n)
+void procces(int p, int i, int j)
 {
-	for (j = 0; j <= n; j++)
+	for (j = 0; j <= 9; j++)
 	{	p = i * j;
 		if (p > 9)
 		{	_putchar((p / 10) + '0');
@@ -43,18 +43,18 @@ void procces(int p, int i, int j, int n)
 	}
 }
 /**
- * print_times_table - prints 9 times table
+ * times_table - prints 9 times table
  *
- * @n: size of the times table
+ *
  *
  *
  *
  */
 
-void print_times_table(int n)
-{
-	int i = 0, j = 0, p = 0;
-	for (; i <= n; i++)
-	{	procces(p, i, j, n);
+void times_table(void)
+{	int i = 0, j = 0, p = 0;
+
+	for (; i <= 9; i++)
+	{	procces(p, i, j);
 	}
 }

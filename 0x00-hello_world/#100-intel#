@@ -1,2 +1,0 @@
-#!/bin/bash
-gcc dialect  $CFILE -S
