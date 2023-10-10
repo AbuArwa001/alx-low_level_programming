@@ -1,7 +1,25 @@
 #ifndef DOG_H_
 #define DOG_H_
 #include <stdlib.h>
+#include <string.h>
+/**
+ * _strlen - computes the size of a string
+ *
+ * @s: the string to be examined
+ * Return: returns the length in number
+ */
+int _strlen(char *s);
+/**
+ * _memcpy - copies n bytes from memory area src to memory
+ *           area dest
+ * @dest: destination memory area of src
+ * @src: source memory area to be copued
+ * @n: number of bytes to be copied
+ *
+ * Return: returns dest
+ */
 
+char *_memcpy(char *dest, char *src, unsigned int n);
 /**
  * struct dog - DOg properties
  * @name: name of the dog

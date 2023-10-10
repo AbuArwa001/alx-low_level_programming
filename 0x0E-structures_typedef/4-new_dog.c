@@ -1,6 +1,20 @@
 #include "dog.h"
 #include "1-init_dog.c"
+#include "2-strlen.c"
+#include "1-memcpy.c"
+#include <stdio.h>
 
+/**
+ * _memcpy - copies n bytes from memory area src to memory
+ *           area dest
+ * @dest: destination memory area of src
+ * @src: source memory area to be copued
+ * @n: number of bytes to be copied
+ *
+ * Return: returns dest
+ */
+
+char *_memcpy(char *dest, char *src, unsigned int n);
 /**
  * new_dog - creates a new dog struct
  * @name: name of the dog
@@ -17,10 +31,12 @@ dog_t *new_dog(char *name, float age, char *owner)
 		return (NULL);
 	}
 
-	/*init_dog(d, name, age, owner);*/
-
-	d->name = name;
+	init_dog(d, name, age, owner);
+	d->name = malloc(sizeof(char) * _strlen(name) + 1);
+	d->owner = malloc(sizeof(char) * _strlen(owner) + 1);
+	_memcpy(d->name, name, _strlen(name));
+	_memcpy(d->owner, owner, _strlen(owner));
 	d->age = age;
-	d->owner = owner;
+
 	return (d);
 }
