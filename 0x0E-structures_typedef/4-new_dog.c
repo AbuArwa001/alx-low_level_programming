@@ -33,6 +33,18 @@ dog_t *new_dog(char *name, float age, char *owner)
 	init_dog(d, name, age, owner);
 	d->name = malloc(sizeof(char) * _strlen(name) + 1);
 	d->owner = malloc(sizeof(char) * _strlen(owner) + 1);
+
+	if (d->name == NULL || d->owner == NULL)
+	{
+		if (d->name != NULL)
+			free(d->name);
+
+		if (d->owner != NULL)
+			free(d->owner);
+
+		free(d);
+	}
+
 	_memcpy(d->name, name, _strlen(name));
 	_memcpy(d->owner, owner, _strlen(owner));
 	d->age = age;
