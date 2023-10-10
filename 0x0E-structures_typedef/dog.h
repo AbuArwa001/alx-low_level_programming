@@ -1,7 +1,6 @@
 #ifndef DOG_H_
 #define DOG_H_
 #include <stdlib.h>
-#include <string.h>
 /**
  * _strlen - computes the size of a string
  *
