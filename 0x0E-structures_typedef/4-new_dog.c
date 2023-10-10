@@ -2,7 +2,7 @@
 #include "1-init_dog.c"
 #include "2-strlen.c"
 #include "1-memcpy.c"
-#include <stdio.h>
+
 
 /**
  * _memcpy - copies n bytes from memory area src to memory
@@ -32,8 +32,8 @@ dog_t *new_dog(char *name, float age, char *owner)
 	}
 
 	init_dog(d, name, age, owner);
-	d->name = malloc(sizeof(char) * _strlen(name) + 1);
-	d->owner = malloc(sizeof(char) * _strlen(owner) + 1);
+	d->name = malloc(sizeof(char) * _strlen(name));
+	d->owner = malloc(sizeof(char) * _strlen(owner) );
 	_memcpy(d->name, name, _strlen(name));
 	_memcpy(d->owner, owner, _strlen(owner));
 	d->age = age;
