@@ -1,6 +1,6 @@
 #ifndef FUNCTION_POINTERS_H_
 #define FUNCTION_POINTERS_H_
-
+#include <stdlib.h>
 /**
  * _putchar - writes the character c to stdout
  * @c: The character to print
