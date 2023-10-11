@@ -1,5 +1,4 @@
 #include "3-calc.h"
-#include "3-strcmp.c"
 /**
  * get_op_func - selects the correct function to perform
  *               the operation aske by the user
@@ -24,7 +23,7 @@ int (*get_op_func(char *s))(int, int)
 	while (ops[i].op != NULL)
 	{
 
-		if (_strcmp(ops[i].op, s) == 0)
+		if (ops[i].op[0] == *s && *(s + 1) == '\0')
 		{
 			return (ops[i].f);
 		}
