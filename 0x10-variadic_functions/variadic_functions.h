@@ -11,8 +11,8 @@
  */
 struct fmt
 {
-        char c;
-        char *chara;
+	char c;
+	char *chara;
 };
 
 typedef struct fmt fmt;
@@ -20,7 +20,7 @@ typedef struct fmt fmt;
 int sum_them_all(const unsigned int n, ...);
 void print_numbers(const char *separator, const unsigned int n, ...);
 void print_strings(const char *separator, const unsigned int n, ...);
-void print_all(const char * const format, ...);
+void print_all(const char *const format, ...);
 /**
  * _strlen - computes the size of a string
  *
