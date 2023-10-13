@@ -24,7 +24,7 @@ void print(char c, char *sep, va_list args)
 			break;
 
 		case 'f':
-			f = va_arg(args, int);
+			f = va_arg(args, double);
 			printf("%f%s", f, sep);
 			break;
 
