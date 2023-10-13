@@ -31,10 +31,6 @@ void print_all(const char *const format, ...)
 				ch[1] = '\0';
 				_strcat(ch, fm[j].chara);
 				cha = va_arg(args, char *);
-				if (fm[j].chara[0] == 's' && cha == NULL)
-				{
-					cha = "(nil)";
-				}
 				printf(ch, cha);
 				/*print(fm[j].chara[0], ch, args);*/
 				if (format[i + 1] != '\0')
