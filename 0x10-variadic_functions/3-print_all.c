@@ -1,7 +1,22 @@
 #include "variadic_functions.h"
 #include "0-strcat.c"
 #include <stdio.h>
+/**
+ * st_chk - checks string if null
+ * @c: a format specifier if string
+ * @st: string to be checked
+ * Return: returns strin or (nil) if NUUL
+ */
 
+char *st_chk(char c, char *st)
+{
+	if (c == 's' && st == NULL)
+	{
+		st = "(nil)";
+	}
+
+	return (st);
+}
 /**
  * print_all - prints anything
  * @format: a list of types of arguments
@@ -20,9 +35,11 @@ void print_all(const char *const format, ...)
 	};
 
 	va_start(args, format);
+
 	while (format[i])
 	{
 		j = 0;
+
 		while (fm[j].c)
 		{
 			if (format[i] == fm[j].c)
@@ -31,6 +48,7 @@ void print_all(const char *const format, ...)
 				ch[1] = '\0';
 				_strcat(ch, fm[j].chara);
 				cha = va_arg(args, char *);
+				cha = st_chk(fm[j].chara[0], cha);
 				printf(ch, cha);
 				/*print(fm[j].chara[0], ch, args);*/
 				if (format[i + 1] != '\0')
@@ -38,7 +56,6 @@ void print_all(const char *const format, ...)
 			}
 			j++;
 		}
-
 		i++;
 	}
 	printf("\n");
