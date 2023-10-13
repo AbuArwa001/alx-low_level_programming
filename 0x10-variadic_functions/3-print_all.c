@@ -4,7 +4,7 @@
 /**
  * print - prints the current format string
  * @c: format char to be checke after %
- * @ch: format string
+ * @sep: separtor of string
  * @args: va_slist
  **/
 void print(char c, char *sep, va_list args)
