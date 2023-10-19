@@ -29,4 +29,18 @@ size_t print_list(const list_t *h);
  * Return: returns the number of nodes in the list
 */
 size_t list_len(const list_t *h);
+/**
+ * add_node - adds node at the begining of the list
+ * @head: its the head of the lis
+ * @str: string data to add
+ * Return: returns the pointer to the addrres of added node
+*/
+list_t *add_node(list_t **head, const char *str);
+/**
+ * _strlen - computes the size of a string
+ *
+ * @s: the string to be examined
+ * Return: returns the length in number
+ */
+int _strlen(char *s);
 #endif
