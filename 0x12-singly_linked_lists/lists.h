@@ -23,4 +23,10 @@ typedef struct list_s
  *
 */
 size_t print_list(const list_t *h);
+/**
+ * list_len - finds the lenth of the node
+ * @h: node head
+ * Return: returns the number of nodes in the list
+*/
+size_t list_len(const list_t *h);
 #endif
