@@ -50,4 +50,9 @@ int _strlen(char *s);
  * Return: returns the pointer to address of the added node
 */
 list_t *add_node_end(list_t **head, const char *str);
+/**
+ * free_list - frees every node in the list
+ * @head: list head
+*/
+void free_list(list_t *head);
 #endif
