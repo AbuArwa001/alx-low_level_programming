@@ -43,4 +43,11 @@ list_t *add_node(list_t **head, const char *str);
  * Return: returns the length in number
  */
 int _strlen(char *s);
+/**
+ * add_node_ed - adds node at the end of the list
+ * @head: its the head of the lis
+ * @str: string data to add
+ * Return: returns the pointer to address of the added node
+*/
+list_t *add_node_end(list_t **head, const char *str);
 #endif
