@@ -1,6 +1,6 @@
 #include "lists.h"
 /**
- * free_listint - frees all the node in a list.
+ * __free - frees all the node in a list.
  * @head: pointer to a list.
  */
 void __free(listint_t *head)
