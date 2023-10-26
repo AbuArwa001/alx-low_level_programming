@@ -19,6 +19,11 @@ unsigned int flip_bits(unsigned long int n, unsigned long int m)
 		idx1 = get_bit(n, i);
 		idx2 = get_bit(m, i);
 
+		if (idx1 == -1 || idx2 - 1)
+		{
+			return (-1);
+		}
+
 		if (idx1 != idx2)
 		{
 			if (idx2 == 0)
