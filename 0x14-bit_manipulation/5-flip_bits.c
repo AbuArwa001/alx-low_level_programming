@@ -13,8 +13,9 @@ unsigned int flip_bits(unsigned long int n, unsigned long int m)
 {
 	int  i = 0, idx1 = 0, idx2 = 0, count = 0;
 
-    if (n > 64|| m > 64)
+	if (n > 64 || m > 64)
 		return (-1);
+
 	while (i < 64)
 	{
 		idx1 = get_bit(n, i);
