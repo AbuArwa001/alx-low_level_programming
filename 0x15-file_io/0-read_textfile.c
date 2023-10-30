@@ -14,9 +14,24 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	int fd, readed = 0, written = 0;
 	char *readd = malloc(letters * sizeof(char));
 
+	if (filename == NULL)
+		return (0);
+
 	fd = open(filename, O_RDONLY);
+
+	if (fd == -1)
+		return (0);
+
 	readed = read(fd, readd, letters);
+
+	if (readed == -1)
+		return (0);
+
 	written = write(STDOUT_FILENO, readd, readed);
+
+	if (written == -1 || written != readed)
+		return (0);
+
 	close(fd);
 	free(readd);
 	return (written);
