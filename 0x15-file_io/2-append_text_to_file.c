@@ -16,7 +16,7 @@ int append_text_to_file(const char *filename, char *text_content)
 		return (-1);
 	}
 
-	fd = open(filename, O_RDWR & O_APPEND);
+	fd = open(filename, O_RDWR | O_APPEND);
 
 	if (text_content == NULL)
 	{
@@ -30,7 +30,6 @@ int append_text_to_file(const char *filename, char *text_content)
 			close(fd);
 			return (-1);
 		}
-
 	}
 
 	write(fd, text_content, _strlen(text_content));
