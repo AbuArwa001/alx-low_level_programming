@@ -51,17 +51,9 @@ int main(int ac, char const *av[])
 	buff = malloc(1024 * sizeof(char));
 
 	fd1 = open(av[1], O_RDONLY);
-
 	if (fd1 == -1 || buff == NULL)
 	{
 		free(buff);
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", av[1]);
-		exit(98);
-	}
-
-	reaad = read(fd1, buff, 1024);
-	if (fd1 == -1)
-	{
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", av[1]);
 		exit(98);
 	}
@@ -71,11 +63,19 @@ int main(int ac, char const *av[])
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", av[2]);
 		exit(99);
 	}
-	written = write(fd2, buff, reaad);
-	if (written == -1)
+	while ((reaad = read(fd1, buff, 1024)) > 0)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", av[2]);
-		exit(99);
+		if (fd1 == -1 || reaad == -1)
+		{
+			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", av[1]);
+			exit(98);
+		}
+		written = write(fd2, buff, reaad);
+		if (written == -1)
+		{
+			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", av[2]);
+			exit(99);
+		}
 	}
 	closing(fd1, fd2, &buff);
 	return (0);
