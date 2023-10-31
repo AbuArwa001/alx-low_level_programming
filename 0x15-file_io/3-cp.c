@@ -9,7 +9,7 @@
  * @fd2: ffile dicriptor 2
  * @buf: buffer to be freed
 */
-void closing(int fd1, int fd2, int **buf)
+void closing(int fd1, int fd2, char **buf)
 {
 	int  cl1 = 0, cl2 = 0;
 
@@ -40,25 +40,25 @@ void closing(int fd1, int fd2, int **buf)
 int main(int ac, char const *av[])
 {
 	int fd1, fd2, written = 0, reaad = 0;
-	char *buff = malloc(1024 * sizeof(char));
+	char *buff = NULL;
 
 	if (ac != 3)
 	{
 		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 		exit(97);
 	}
-	if (buff == NULL)
+
+	buff = malloc(1024 * sizeof(char));
+
+	fd1 = open(av[1], O_RDONLY);
+
+	if (fd1 == -1 || buff == NULL)
 	{
 		free(buff);
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", fd1);
-		exit(98);
-	}
-	fd1 = open(av[1], O_RDONLY);
-	if (fd1 == -1)
-	{
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", av[1]);
 		exit(98);
 	}
+
 	reaad = read(fd1, buff, 1024);
 	if (fd1 == -1)
 	{
