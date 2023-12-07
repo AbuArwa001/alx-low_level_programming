@@ -45,4 +45,9 @@ dlistint_t *add_dnodeint(dlistint_t **head, const int n);
  * Return: returns new node
 */
 dlistint_t *add_dnodeint_end(dlistint_t **head, const int n);
+/**
+ * free_dlistint - free list
+ * @head: head of the list
+*/
+void free_dlistint(dlistint_t *head);
 #endif
