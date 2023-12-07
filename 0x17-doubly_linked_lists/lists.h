@@ -31,4 +31,11 @@ size_t print_dlistint(const dlistint_t *h);
  * Return: returns the size of the list
 */
 size_t dlistint_len(const dlistint_t *h);
+/**
+ * add_dnodeint - add new node at the begining of the list
+ * @head: head of the lis
+ * @n: data of the list
+ * Return: returns new added node
+*/
+dlistint_t *add_dnodeint(dlistint_t **head, const int n);
 #endif
