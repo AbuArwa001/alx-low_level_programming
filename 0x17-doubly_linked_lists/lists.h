@@ -50,4 +50,18 @@ dlistint_t *add_dnodeint_end(dlistint_t **head, const int n);
  * @head: head of the list
 */
 void free_dlistint(dlistint_t *head);
+/**
+ * get_dnodeint_at_index -  getss the value at nth index
+ * @head: head of the list
+ * @index: index of the node
+ * Return: returns the nth node
+ *
+*/
+dlistint_t *get_dnodeint_at_index(dlistint_t *head, unsigned int index);
+/**
+ * sum_dlistint - finds the sum of the list
+ * @head: start of the list
+ * Return: returns the sum of the list
+*/
+int sum_dlistint(dlistint_t *head);
 #endif
