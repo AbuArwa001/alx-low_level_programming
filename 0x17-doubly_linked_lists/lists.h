@@ -25,4 +25,10 @@ typedef struct dlistint_s
  *
 */
 size_t print_dlistint(const dlistint_t *h);
+/**
+ * dlistint_len - finds the size of the list
+ * @h: ist to find size
+ * Return: returns the size of the list
+*/
+size_t dlistint_len(const dlistint_t *h);
 #endif
