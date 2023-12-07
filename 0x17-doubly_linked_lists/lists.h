@@ -38,4 +38,11 @@ size_t dlistint_len(const dlistint_t *h);
  * Return: returns new added node
 */
 dlistint_t *add_dnodeint(dlistint_t **head, const int n);
+/**
+ * add_dnodeint_end( - add to the end of the list
+ * @head: head of the list
+ * @n: data
+ * Return: returns new node
+*/
+dlistint_t *add_dnodeint_end(dlistint_t **head, const int n);
 #endif
