@@ -22,12 +22,13 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	i = key_index((const unsigned char *)key, ht->size);
 	tmp_node = temp->array[i]; /*find the value in the idx if exist*/
 	/*create a node*/
-	node->key = strdup(key);
+	node->key = (char *)key;
 	node->value = strdup(value);
 	node->next = NULL;
 
 	if (!tmp_node)
 	{
+        
 		temp->array[i] = node;
 	}
 	else
