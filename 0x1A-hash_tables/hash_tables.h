@@ -1,6 +1,7 @@
 #ifndef _HASH_H
 #define _HASH_H
 #include <stdlib.h>
+#include <string.h>
 
 #define SIZE 1000
 
@@ -52,4 +53,12 @@ unsigned long int hash_djb2(const unsigned char *str);
  * Return: returns the index matched
 */
 unsigned long int key_index(const unsigned char *key, unsigned long int size);
+/**
+ * hash_table_set - insert n a hash table
+ * @ht: table to add data
+ * @key: its the key to be searched
+ * @value: value to be inserted
+ * Return: return 0 on failiure and 1 on success
+*/
+int hash_table_set(hash_table_t *ht, const char *key, const char *value);
 #endif
