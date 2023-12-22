@@ -14,10 +14,9 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	hash_node_t *node  = malloc(sizeof(hash_node_t));
 
 	if (!node)
-	{
 		return (0);
-	}
-
+	if (!key || strlen(key) == 0)
+		return (0);
 	/*find the index*/
 	i = key_index((const unsigned char *)key, ht->size);
 	tmp_node = temp->array[i]; /*find the value in the idx if exist*/
@@ -25,7 +24,6 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	node->key = strdup(key);
 	node->value = strdup(value);
 	node->next = NULL;
-
 	if (!node->key || !node->value)
 	{
 		free(node->key);
@@ -33,6 +31,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		free(node);
 		return (0);
 	}
+
 	if (!tmp_node)
 	{
 
@@ -47,5 +46,6 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		tmp_node  =  node;
 		temp->array[i] = tmp_node;
 	}
+
 	return (1);
 }
