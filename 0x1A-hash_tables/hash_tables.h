@@ -45,4 +45,11 @@ hash_table_t *hash_table_create(unsigned long int size);
  * Return: hash value
  */
 unsigned long int hash_djb2(const unsigned char *str);
+/**
+ * key_index - finds the index to be used
+ * @key: key to be placed
+ * @size: size of the table
+ * Return: returns the index matched
+*/
+unsigned long int key_index(const unsigned char *key, unsigned long int size);
 #endif
