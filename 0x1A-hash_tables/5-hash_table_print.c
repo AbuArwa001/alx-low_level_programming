@@ -29,19 +29,15 @@ void hash_table_print(const hash_table_t *ht)
 	i = 0;
 	while (i < ht->size)
 	{
-		if (ht->array[i])
-		{
-			printf("'%s':", ht->array[i]->key);
 			node =  ht->array[i];
 			while (node)
 			{
-				printf(" '%s'", node->value);
+                printf("'%s': '%s'", node->key, node->value);
 				node = node->next;
 				if (count != 1)
 					printf(", ");
 				count--;
 			}
-		}
 		i++;
 	}
 	printf("}\n");
