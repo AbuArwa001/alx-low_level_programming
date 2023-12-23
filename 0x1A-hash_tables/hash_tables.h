@@ -2,6 +2,7 @@
 #define _HASH_H
 #include <stdlib.h>
 #include <string.h>
+#include <stdio.h>
 
 #define SIZE 1000
 
@@ -68,4 +69,9 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value);
  * Return: returns the value for the key
 */
 char *hash_table_get(const hash_table_t *ht, const char *key);
+/**
+ * hash_table_print - print hash tablecontents
+ * @ht: table to be proccessed
+*/
+void hash_table_print(const hash_table_t *ht);
 #endif
