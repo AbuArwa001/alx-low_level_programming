@@ -61,4 +61,11 @@ unsigned long int key_index(const unsigned char *key, unsigned long int size);
  * Return: return 0 on failiure and 1 on success
 */
 int hash_table_set(hash_table_t *ht, const char *key, const char *value);
+/**
+ * hash_table_get -  function that retrieves a value associated with a key
+ * @ht is the hash table you want to look into
+ * @key: is the key you are looking for
+ * Return: returns the value for the key
+*/
+char *hash_table_get(const hash_table_t *ht, const char *key);
 #endif

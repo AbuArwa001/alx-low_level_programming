@@ -1,5 +1,5 @@
 #include "hash_tables.h"
-
+#include <stdio.h>
 /**
  * create_node - creates a new hash node
  * @key: the key for the new node
@@ -51,6 +51,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 
 	/* Create a node */
 	node = create_node(key, value);
+
 	if (!node)
 		return (0);
 
@@ -60,7 +61,8 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		free(node->key);
 		free(node->value);
 		free(node);
-		strcpy(ht->array[i]->value, value);
+		free(ht->array[i]->value);
+		ht->array[i]->value = strdup(value);
 	}
 	else
 	{
