@@ -1,51 +1,73 @@
 #include "hash_tables.h"
+
 /**
- * hash_table_set - insert n a hash table
- * @ht: table to add data
- * @key: its the key to be searched
- * @value: value to be inserted
- * Return: return 0 on failiure and 1 on success
-*/
-int hash_table_set(hash_table_t *ht, const char *key, const char *value)
+ * create_node - creates a new hash node
+ * @key: the key for the new node
+ * @value: the value for the new node
+ * Return: pointer to the new node or NULL on failure
+ */
+hash_node_t *create_node(const char *key, const char *value)
 {
-	unsigned long int i = 0;
-	hash_table_t *temp = ht;
-	hash_node_t *tmp_node = NULL;
-	hash_node_t *node  = malloc(sizeof(hash_node_t));
+	hash_node_t *node = malloc(sizeof(hash_node_t));
 
 	if (!node)
-		return (0);
-	if (!key || strlen(key) == 0)
-		return (0);
-	if (ht == NULL || *key == '\n' || *value == '\n')
-		return (0);
-	/*find the index*/
-	i = key_index((const unsigned char *)key, ht->size);
-	tmp_node = temp->array[i]; /*find the value in the idx if exist*/
-	/*create a node*/
+		return (NULL);
+
 	node->key = strdup(key);
 	node->value = strdup(value);
 	node->next = NULL;
+
 	if (!node->key || !node->value)
 	{
 		free(node->key);
 		free(node->value);
 		free(node);
-		return (0);
+		return (NULL);
 	}
-	if (!tmp_node)
-	{
 
-		temp->array[i] = node;
+	return (node);
+}
+
+/**
+ * hash_table_set - insert a key-value pair into a hash table
+ * @ht: the hash table to add data
+ * @key: the key to be searched
+ * @value: the value to be inserted
+ * Return: 0 on failure, 1 on success
+ */
+int hash_table_set(hash_table_t *ht, const char *key, const char *value)
+{
+	unsigned long int i = 0;
+	hash_table_t *temp = ht;
+	hash_node_t *tmp_node = NULL;
+	hash_node_t *node;
+
+	if (!key || strlen(key) == 0 || !ht || *key == '\0' || *value == '\0')
+		return (0);
+
+	/* Find the index */
+	i = key_index((const unsigned char *)key, ht->size);
+	tmp_node = temp->array[i];
+
+	/* Create a node */
+	node = create_node(key, value);
+	if (!node)
+		return (0);
+
+	/* If the key already exists, update the value */
+	if (tmp_node && strcmp(tmp_node->key, key) == 0)
+	{
+		free(node->key);
+		free(node->value);
+		free(node);
+		strcpy(ht->array[i]->value, value);
 	}
 	else
 	{
-
-		hash_node_t *nd = tmp_node;
-
-		node->next = nd;
-		tmp_node  =  node;
-		temp->array[i] = tmp_node;
+		/* Update the head of the linked list */
+		node->next = tmp_node;
+		temp->array[i] = node;
 	}
+
 	return (1);
 }
