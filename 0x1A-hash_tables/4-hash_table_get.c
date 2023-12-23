@@ -17,10 +17,14 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 	i = key_index((const unsigned char *)key, ht->size);
 	tmp_node = ht->array[i];
 
-	if (tmp_node)
+	while (tmp_node)
 	{
-		value = tmp_node->value;
-		return (value);
+		if (strcmp(tmp_node->key,  key) == 0)
+		{
+			value = tmp_node->value;
+			return (value);
+		}
+		tmp_node = tmp_node->next;
 	}
 
 	return (value);
