@@ -1,0 +1,11 @@
+# Usage:
+# make        # compile all binary
+# make clean  # remove ALL binaries and objects
+
+CC = gcc			# compiler to use
+
+SRC = $(wildcard *.c)
+# BINS := $(SRCS:%.c=%)
+
+all: ${SRC}
+	${CC} ${SRC}  -o school
