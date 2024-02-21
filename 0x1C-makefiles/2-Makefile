@@ -4,6 +4,4 @@ OBJ = $(SRC:.c=.o)
 NAME = program
 all: $(NAME) $(OBJ)
 	$(CC) $(OBJ) -o $(NAME)
-#COMPILE: $(SRC)
-#	$(CC) -c $(SRC)
 
