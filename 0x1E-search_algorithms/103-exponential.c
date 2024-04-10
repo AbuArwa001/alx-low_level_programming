@@ -32,7 +32,7 @@ int binary_search_exponent(int *array, size_t start, size_t end, int value)
 		return (-1);
 
 	left = start;
-	right = end - 1;
+	right = end;
 
 	while (left <= right)
 	{
