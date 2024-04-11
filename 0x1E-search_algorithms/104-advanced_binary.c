@@ -29,7 +29,7 @@ void print_array(int *array, size_t start, size_t end)
 	printf("\n");
 }
 
-int binary_search_helper(int *array, size_t size, size_t start, size_t end,
+int binary_search_helper(int *array, size_t start, size_t end,
 int value)
 {
 	size_t mid = 0;
@@ -40,26 +40,13 @@ int value)
 	print_array(array, start, end);
 
 	mid = floor((end + start) / 2);
-	size = mid - 1;
 
-	if (array[mid] < value)
-	{
-		start = mid + 1;
-		mid = binary_search_helper(array, size, start, end, value);
-	}
+	if (array[mid] == value && (mid == start || array[mid - 1] != value))
+		return (mid);
+	else if (array[mid] >= value)
+		return (binary_search_helper(array, start, mid, value));
 	else
-		if (array[mid] > value)
-		{
-			end = mid - 1;
-			mid = binary_search_helper(array, size, start, end, value);
-		}
-		else
-			if (array[mid] == value)
-			{
-				return (mid);
-			}
-
-	return (mid);
+		return (binary_search_helper(array, mid + 1, end, value));
 }
 /**
  * advanced_binary -  function that searches for a
@@ -72,28 +59,10 @@ int value)
 int advanced_binary(int *array, size_t size, int value)
 {
 	size_t left = 0, right = size - 1, idx = 0;
-	size_t mid;
 
 	if (!array)
 		return (-1);
 
-	print_array(array, left, right);
-
-	mid = floor((size) / 2);
-
-	if (array[mid] == value)
-		return (mid);
-
-	if (array[mid] < value)
-	{
-		return (binary_search_helper(array, size, mid + 1, size - 1, value));
-	}
-	else if (array[mid] > value)
-	{
-		right = mid - 1;
-		return (binary_search_helper(array, size, 0, right, value));
-	}
-
-	idx = binary_search_helper(array, size, left, right, value);
+	idx = binary_search_helper(array, left, right, value);
 	return (idx);
 }
